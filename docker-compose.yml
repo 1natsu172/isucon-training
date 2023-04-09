@@ -11,12 +11,12 @@ services:
       - type: bind
         source: ./src
         target: /var/www/html
-      - type: bind
-        source: ./isucon
-        target: /home/isucon
-      - type: volume
-        source: isucon-admin
-        target: /home/isucon-admin
+      # - type: bind
+      #   source: ./isucon
+      #   target: /home/isucon
+      # - type: volume
+      #   source: isucon-admin
+      #   target: /home/isucon-admin
       - type: bind
         source: ./Makefile
         target: /home/Makefile
@@ -30,5 +30,5 @@ services:
       - "isucondition-2.t.isucon.dev:127.0.0.12"
       - "isucondition-3.t.isucon.dev:127.0.0.13"
 
-volumes:
-  isucon-admin:
+# volumes:
+  # isucon-admin:
