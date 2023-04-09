@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# docker run -it --name isucon-sandbox isucon-training
+docker exec -it isucon-training-primary /bin/bash

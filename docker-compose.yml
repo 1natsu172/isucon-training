@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  primary:
+    container_name: "isucon-training-primary"
+    privileged: true # use for systemd execute.
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - type: bind
+        source: ./src
+        target: /var/www/html
+      - type: bind
+        source: ./Makefile
+        target: /home/Makefile
+    ports: [ 8080:80 ]
+    extra_hosts:
+      - "localhost:127.0.0.1"
+      - "isucondition-1.t.isucon.dev:127.0.0.11"
+      - "isucondition-2.t.isucon.dev:127.0.0.12"
+      - "isucondition-3.t.isucon.dev:127.0.0.13"
