@@ -11,18 +11,20 @@ services:
       - type: bind
         source: ./src
         target: /var/www/html
-      # - type: bind
-      #   source: ./isucon
-      #   target: /home/isucon
-      # - type: volume
-      #   source: isucon-admin
-      #   target: /home/isucon-admin
+      - type: bind
+        source: ./isucon
+        target: /root/isucon
+        read_only: false
+      - type: volume
+        source: isucon-admin
+        target: /root/isucon-admin
+        read_only: false
       - type: bind
         source: ./Makefile
-        target: /home/Makefile
+        target: /root/Makefile
       - type: bind
         source: ./Setup
-        target: /home/Setup
+        target: /root/Setup
     ports: [ 8080:80 ]
     extra_hosts:
       - "localhost:127.0.0.1"
@@ -30,5 +32,5 @@ services:
       - "isucondition-2.t.isucon.dev:127.0.0.12"
       - "isucondition-3.t.isucon.dev:127.0.0.13"
 
-# volumes:
-  # isucon-admin:
+volumes:
+  isucon-admin:

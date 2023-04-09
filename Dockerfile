@@ -10,6 +10,9 @@ RUN apt update && \
     DEBIAN_FRONTEND=noninteractive apt install -y python3 python3-pip ssh sudo git curl systemd vim && \
     pip3 install ansible
 
+# RUN mkdir -p /root/isucon && sudo chmod -R 777 /root/isucon
+# RUN mkdir -p /root/isucon-admin && sudo chmod -R 777 /root/isucon-admin
+
 # RUN useradd -m ${USER_NAME} && \
 #     echo "${USER_NAME}:password" | chpasswd && \
 #     echo "${USER_NAME} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
