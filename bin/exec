@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# docker run -it --name isucon-sandbox isucon-training
-docker exec -it isucon-training-primary /bin/bash
+if [ "$#" -gt 0 ]; then
+  echo "argv: $@"
+  docker exec -it isucon-training-primary /bin/bash -c "$@"
+else
+  docker exec -it isucon-training-primary /bin/bash
+fi
+

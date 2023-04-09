@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# docker build --progress=plain -t isucon-training .
-./bin/run --build
+./bin/run --build "$@"

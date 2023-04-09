@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# docker run -it --name isucon-sandbox isucon-training
 docker-compose up "$@"

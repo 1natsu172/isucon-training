@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+## build container
+./bin/build -d
+
+## setup isucon environment by ansible
+./bin/exec "cd /home && make -f Setup"
