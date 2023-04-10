@@ -35,6 +35,12 @@ cd /root && make -f Setup play
 ### bench
 
 ```bash
+./bin/build
+```
+
+もしくはdevcontainer経由でも動くはず
+
+```bash
 ./bin/exec
 sudo -i -u isucon
 cd bench
