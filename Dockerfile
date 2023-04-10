@@ -10,8 +10,13 @@ RUN apt update && \
     DEBIAN_FRONTEND=noninteractive apt install -y python3 python3-pip ssh sudo git curl systemd vim && \
     pip3 install ansible
 
-# RUN mkdir -p /root/isucon && sudo chmod -R 777 /root/isucon
-# RUN mkdir -p /root/isucon-admin && sudo chmod -R 777 /root/isucon-admin
+# volumeはrootで作成されるがansible実行中にisuconユーザーでplayする箇所がありパーミッションでコケるのでいじる && .bashrcが何故か作成されずコケるため先に作る
+RUN mkdir -p /home/isucon && \
+    mkdir -p /home/isucon-admin && \
+    touch /home/isucon/.bashrc && \
+    touch /home/isucon-admin/.bashrc && \
+    sudo chmod -R 777 /home/isucon && \
+    sudo chmod -R 777 /home/isucon-admin
 
 # RUN useradd -m ${USER_NAME} && \
 #     echo "${USER_NAME}:password" | chpasswd && \
