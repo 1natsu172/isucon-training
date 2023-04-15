@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+source ./ssh_keys.sh
+
+## gen ssh key
+generate_ssh_key_if_not_exists
+copy_pub_key
+
 ## build container
 ./bin/build -d
 
