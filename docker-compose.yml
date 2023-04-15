@@ -33,7 +33,7 @@ services:
       - type: bind
         source: ./Setup
         target: /root/Setup
-    ports: [ 8080:80 ]
+    ports: [ 2222:22 ]
     extra_hosts:
       - "localhost:127.0.0.1"
       - "isucondition-1.t.isucon.dev:127.0.0.11"

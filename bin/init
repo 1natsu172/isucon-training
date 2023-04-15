@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-source ./ssh_keys.sh
+script_path=$(
+  cd "$(dirname ${BASH_SOURCE:-$0})"
+  pwd
+)
+
+source ${script_path}/ssh_keys.sh
 
 ## gen ssh key
 generate_ssh_key_if_not_exists

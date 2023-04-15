@@ -28,7 +28,7 @@ RUN mkdir -p /home/isucon && \
     sudo chmod -R 777 /home/isucon && \
     sudo chmod -R 777 /home/isucon-admin
 
-EXPOSE 80
+EXPOSE 22
 
 # ARG USER_NAME=isucon
 
