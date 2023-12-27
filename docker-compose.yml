@@ -28,9 +28,6 @@ services:
         target: /root/isucon-admin
         read_only: false
       - type: bind
-        source: ./Makefile
-        target: /root/Makefile
-      - type: bind
         source: ./Setup
         target: /root/Setup
     ports: [ 2222:22 ]
