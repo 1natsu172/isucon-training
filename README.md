@@ -1,5 +1,8 @@
 ## isucon11q環境をM1 macOS向けにdockerで立てるrepo
 
+※いわゆる本番のリモートサーバー代わりをローカルに立てるrepoです。
+立った後はSSH接続したりVSCode Remote Developmentやdev containerで入っていい感じにパフォーマンス計測とチューニングをしてください。
+
 ### setup
 
 ```bash
@@ -40,8 +43,6 @@ cd /root && make -f Setup play
 ./bin/build
 ```
 
-もしくはdevcontainer経由でも動くはず
-
 ```bash
 ./bin/exec
 sudo -i -u isucon
@@ -51,3 +52,5 @@ cd bench
 # isucondition(3000)へ直接アクセスを向けたい場合
 ./bench -all-addresses 127.0.0.11 -target 127.0.0.11:3000 -jia-service-url http://127.0.0.1:4999
 ```
+
+環境が立って、isuconユーザーでログオンして、ベンチを完走できたらOKです（初期設定はgo言語でのベンチです）。
